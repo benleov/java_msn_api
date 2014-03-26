@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<project default="yguard" basedir=".">
+
+	<echo message="running proguard" />
+
+	<property name="project_name" value="robomsn" />
+
+	<property name="jar" value="dist/${project_name}_dist.jar" />
+	<property name="obfjar" value="dist/${project_name}_obf.jar" />
+	<property name="shrinklog" value="dist/${project_name}_shrinklog.xml" />
+
+	<target name="yguard">
+		<taskdef name="yguard" classname="com.yworks.yguard.YGuardTask" classpath="lib/yguard.jar" />
+
+		<zip update="yes" zipfile="dist/robomsn_dist.jar">
+			<zipfileset src="lib/commons-collections-3.2.jar" />
+			<zipfileset src="lib/commons-lang-2.4.jar" />
+			<zipfileset src="lib/log4j-1.2.15.jar" />
+			<zipfileset src="lib/commons-configuration-1.5.jar" />
+			<zipfileset src="lib/commons-logging-1.1.1.jar" />
+			<zipfileset src="dist/robomsn.jar" />
+		</zip>
+
+		<yguard>
+			<inoutpair in="${jar}" out="${obfjar}" />
+
+			<shrink logfile="${shrinklog}">
+
+			</shrink>
+		</yguard>
+
+	</target>
+
+
+</project>
