@@ -10,8 +10,7 @@ Usage
 Below is a basic example of how to create a chat client that can be used via the command line. The settings (i.e username and password) are read from a settings file. See the SettingsParser class for more details. 
 
 ```java
-/*
- */
+
 package robomsn;
 
 import java.util.HashSet;
@@ -29,7 +28,6 @@ import settings.SettingsInvalidException;
 import settings.SettingsNotFoundException;
 import settings.SettingsParser;
 
-/**
 private static HashSet<Contact> toProcess;
 private static org.apache.log4j.Logger log = Logger.getLogger(Main.class);
 
